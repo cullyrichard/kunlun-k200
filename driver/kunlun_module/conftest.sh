@@ -182,7 +182,7 @@ test_headers() {
 }
 
 build_cflags() {
-    BASE_CFLAGS="-O2 -D__KERNEL__ \
+    BASE_CFLAGS="-O2 -std=gnu11 -fms-extensions -fpermissive -D__KERNEL__ \
 -DKBUILD_BASENAME=\"#conftest$$\" -DKBUILD_MODNAME=\"#conftest$$\" \
 -nostdinc -isystem $ISYSTEM"
 
@@ -5413,6 +5413,55 @@ compile_test() {
             fi
         ;;
 
+        dma_map_ops_has_map_resource)
+            #
+            # Determine if the 'dma_map_ops' structure has a 'map_resource'
+            # member.
+            #
+            # The hook was dropped once the generic dma_map_resource() path
+            # covered every implementation.
+            #
+            CODE="
+            #include <linux/dma-map-ops.h>
+            int conftest_dma_map_ops_has_map_resource(void) {
+                return offsetof(struct dma_map_ops, map_resource);
+            }"
+
+            compile_check_conftest "$CODE" "NV_DMA_MAP_OPS_HAS_MAP_RESOURCE" "" "types"
+        ;;
+
+        follow_pfnmap_start)
+            #
+            # Determine if follow_pfnmap_start() is present.
+            #
+            # Commit 6da8e9634bb7 ("mm: new follow_pfnmap API") in v6.12
+            # replaced follow_pfn(), which was then removed.
+            #
+            CODE="
+            #include <linux/mm.h>
+            int conftest_follow_pfnmap_start(struct follow_pfnmap_args *args) {
+                return follow_pfnmap_start(args);
+            }"
+
+            compile_check_conftest "$CODE" "NV_FOLLOW_PFNMAP_START_PRESENT" "" "types"
+        ;;
+
+        num_registered_fb)
+            #
+            # Determine if the 'num_registered_fb' global is available.
+            #
+            # Commit 5b4c9cfc4bfb ("fbdev: Make registered_fb[] private to
+            # fbmem.c") in v6.1 made it, and registered_fb[], private.
+            #
+            CODE="
+            #include <linux/fb.h>
+            int conftest_num_registered_fb(void) {
+                return num_registered_fb;
+            }"
+
+            compile_check_conftest "$CODE" "NV_NUM_REGISTERED_FB_PRESENT" "" "types"
+        ;;
+
         vm_area_struct_has_const_vm_flags)
             #
             # Determine if the 'vm_area_struct' structure has
@@ -5423,9 +5472,10 @@ compile_test() {
             # functions") in v6.3.
             #
             CODE="
-            #include <linux/mm_types.h>
-            int conftest_vm_area_struct_has_const_vm_flags(void) {
-                return offsetof(struct vm_area_struct, __vm_flags);
+            #include <linux/mm.h>
+            void conftest_vm_area_struct_has_const_vm_flags(
+                    struct vm_area_struct *vma) {
+                vm_flags_set(vma, 0);
             }"
 
             compile_check_conftest "$CODE" "NV_VM_AREA_STRUCT_HAS_CONST_VM_FLAGS" "" "types"

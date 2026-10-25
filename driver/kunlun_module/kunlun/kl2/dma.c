@@ -1128,7 +1128,7 @@ int kl2_pin_host_memory(struct kl2_userprocess *uproc, u64 addr, u64 size,
     minfo->mmaped     = false;
     minfo->page_count = count_pages(addr, size);
 
-    ret = os_lock_user_pages(addr, minfo->page_count, (void **)&minfo->user_pages, flags);
+    ret = os_lock_user_pages((void *)(uintptr_t)addr, minfo->page_count, (void **)&minfo->user_pages, flags);
     if (ret != 0) {
         goto err_get_user_pages;
     }

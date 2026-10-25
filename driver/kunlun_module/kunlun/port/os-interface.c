@@ -244,7 +244,7 @@ NvBool NV_API_CALL os_semaphore_may_sleep(void)
 
 NvBool NV_API_CALL os_is_isr(void)
 {
-    return (in_irq());
+    return (in_hardirq());
 }
 
 // return TRUE if the caller is the super-user
@@ -1118,7 +1118,7 @@ void NV_API_CALL os_get_screen_info(
     NvU64 consoleBar2Address
 )
 {
-#if defined(CONFIG_FB)
+#if defined(CONFIG_FB) && defined(NV_NUM_REGISTERED_FB_PRESENT)
     int i;
     *pPhysicalAddress = 0;
     *pFbWidth = *pFbHeight = *pFbDepth = *pFbPitch = 0;

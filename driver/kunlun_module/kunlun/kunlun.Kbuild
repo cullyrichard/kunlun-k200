@@ -261,6 +261,9 @@ NV_CONFTEST_TYPE_COMPILE_TESTS += mt_device_gre
 NV_CONFTEST_TYPE_COMPILE_TESTS += remove_memory_has_nid_arg
 NV_CONFTEST_TYPE_COMPILE_TESTS += iommu_map_has_gfp_arg
 NV_CONFTEST_TYPE_COMPILE_TESTS += vm_area_struct_has_const_vm_flags
+NV_CONFTEST_TYPE_COMPILE_TESTS += dma_map_ops_has_map_resource
+NV_CONFTEST_TYPE_COMPILE_TESTS += follow_pfnmap_start
+NV_CONFTEST_TYPE_COMPILE_TESTS += num_registered_fb
 NV_CONFTEST_TYPE_COMPILE_TESTS += class_create_has_owner_arg
 
 

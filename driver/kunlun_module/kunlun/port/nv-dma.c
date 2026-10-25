@@ -787,7 +787,13 @@ static NvBool nv_dma_is_map_resource_implemented
 #endif
     }
 
+#if defined(NV_DMA_MAP_OPS_HAS_MAP_RESOURCE)
     return (ops->map_resource != NULL);
+#else
+    /* The hook is gone: every dma_map_ops now goes through the
+     * generic dma_map_resource() path. */
+    return NV_TRUE;
+#endif
 #else
     return NV_FALSE;
 #endif

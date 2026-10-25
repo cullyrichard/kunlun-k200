@@ -30,7 +30,18 @@ static inline int nv_follow_pfn(struct vm_area_struct *vma,
                                 unsigned long address,
                                 unsigned long *pfn)
 {
-#if defined(NV_UNSAFE_FOLLOW_PFN_PRESENT)
+#if defined(NV_FOLLOW_PFNMAP_START_PRESENT)
+    struct follow_pfnmap_args args = { .vma = vma, .address = address };
+    int rc = follow_pfnmap_start(&args);
+
+    if (rc)
+        return rc;
+
+    *pfn = args.pfn;
+    follow_pfnmap_end(&args);
+
+    return 0;
+#elif defined(NV_UNSAFE_FOLLOW_PFN_PRESENT)
     return unsafe_follow_pfn(vma, address, pfn);
 #else
     return follow_pfn(vma, address, pfn);

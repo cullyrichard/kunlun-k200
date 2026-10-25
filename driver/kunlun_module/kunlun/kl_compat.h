@@ -56,6 +56,7 @@ static inline int compat_list_is_last(const struct list_head *list, const struct
 
 #include <uapi/linux/types.h>
 #include <linux/compiler.h>
+#include <linux/version.h>
 
 static __always_inline void compat_data_access_exceeds_word_size(void)
 #ifdef __compiletime_warning
@@ -155,6 +156,22 @@ static __always_inline void __compat_write_once_size(volatile void *p, void *res
         __compat_write_once_size(&(x), &__val, sizeof(__val));                                     \
         __val;                                                                                     \
     })
+
+// hrtimer_init() was removed in v6.15; hrtimer_setup() takes the callback too.
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 15, 0)
+#define hrtimer_setup(t, fn, clock, mode)                                                          \
+    do {                                                                                           \
+        hrtimer_init((t), (clock), (mode));                                                        \
+        (t)->function = (fn);                                                                      \
+    } while (0)
+#endif
+
+// del_timer()/del_timer_sync() were removed in v6.15; timer_delete() and
+// timer_delete_sync() have been the names since v6.2.
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 2, 0)
+#define timer_delete(t)      del_timer(t)
+#define timer_delete_sync(t) del_timer_sync(t)
+#endif
 
 // 从NV驱动移植，以解决不同内核版本间的编译差异，后期完成NV字符串替换
 #include "port/nv-linux.h"

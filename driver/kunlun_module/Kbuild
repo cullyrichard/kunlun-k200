@@ -63,31 +63,32 @@ $(foreach _module, $(NV_KERNEL_MODULES), \
 # Define CFLAGS that apply to all the KUNLUN kernel modules. EXTRA_CFLAGS
 # is deprecated since 2.6.24 in favor of ccflags-y, but we need to support
 # older kernels which do not have ccflags-y. Newer kernels append
-# $(EXTRA_CFLAGS) to ccflags-y for compatibility.
+# $(ccflags-y) to ccflags-y for compatibility.
 #
 
-EXTRA_CFLAGS += -I$(src)/common/inc
-EXTRA_CFLAGS += -I$(src)
-EXTRA_CFLAGS += -I$(src)/../include
-EXTRA_CFLAGS += -Wall -MD $(DEFINES) $(INCLUDES) -Wno-cast-qual -Wno-error -Wno-format-extra-args
-EXTRA_CFLAGS += -D__KERNEL__ -DMODULE -DNVRM -DNV_VERSION_STRING=\"510.39.01\" -Wno-unused-function -Wuninitialized -fno-strict-aliasing -DNV_UVM_ENABLE
+ccflags-y += -I$(src)/common/inc
+ccflags-y += -I$(src)
+ccflags-y += -I$(src)/../include
+ccflags-y += -Wall -MD $(DEFINES) $(INCLUDES) -Wno-cast-qual -Wno-error -Wno-format-extra-args
+ccflags-y += -D__KERNEL__ -DMODULE -DNVRM -DNV_VERSION_STRING=\"510.39.01\" -Wno-unused-function -Wuninitialized -fno-strict-aliasing -DNV_UVM_ENABLE
 # XXX(miaotianxiang): 可选编译选项，某些平台上可能不支持，故需cc-option测试
-EXTRA_CFLAGS += $(call cc-option,-Werror=undef,)
+ccflags-y += $(call cc-option,-Werror=undef,)
 # 开启unused variable检查
 #EXTRA_CFLAGS += $(call cc-option,-Werror=unused-variable,)
 # 关闭注释格式warning
-EXTRA_CFLAGS += $(call cc-option,-Wno-comment,)
-EXTRA_CFLAGS += $(call cc-option,-mno-red-zone,)
-EXTRA_CFLAGS += $(call cc-option,-mcmodel=kernel,)
-EXTRA_CFLAGS += -DNV_SPECTRE_V2=$(NV_SPECTRE_V2)
-EXTRA_CFLAGS += -DNV_KERNEL_INTERFACE_LAYER
+ccflags-y += $(call cc-option,-Wno-comment,)
+ccflags-y += $(call cc-option,-mno-red-zone,)
+ccflags-y += $(call cc-option,-mcmodel=kernel,)
+ccflags-y += -DNV_SPECTRE_V2=$(NV_SPECTRE_V2)
+ccflags-y += -DNV_KERNEL_INTERFACE_LAYER
+ccflags-y += -DNV_LINUX
 
 #
 # Detect SGI UV systems and apply system-specific optimizations.
 #
 
 ifneq ($(wildcard /proc/sgi_uv),)
- EXTRA_CFLAGS += -DNV_CONFIG_X86_UV
+ ccflags-y += -DNV_CONFIG_X86_UV
 endif
 
 
@@ -115,7 +116,7 @@ NV_CONFTEST_CMD := /bin/sh $(NV_CONFTEST_SCRIPT) \
 
 NV_CFLAGS_FROM_CONFTEST := $(shell $(NV_CONFTEST_CMD) build_cflags)
 
-NV_CONFTEST_CFLAGS = $(NV_CFLAGS_FROM_CONFTEST) $(EXTRA_CFLAGS) -fno-pie
+NV_CONFTEST_CFLAGS = $(NV_CFLAGS_FROM_CONFTEST) $(ccflags-y) -fno-pie
 
 NV_CONFTEST_COMPILE_TEST_HEADERS := $(obj)/conftest/macros.h
 NV_CONFTEST_COMPILE_TEST_HEADERS += $(obj)/conftest/functions.h
