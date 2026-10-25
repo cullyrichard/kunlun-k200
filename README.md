@@ -18,6 +18,8 @@ so everything here is verified as far as a machine without the card can go.
 `PORTING.md` is the driver write-up, `LLAMA-BUILD-NOTES.md` the userspace and
 llama.cpp build, `INT4-FEASIBILITY.md` the analysis of where the performance
 actually goes (short version: not the MAC).
+`QUALITY-RESULTS.md` measures what the device's activation quantization costs,
+on CPU, ahead of the card: decode is free, prefill is not.
 
 ## Layout
 

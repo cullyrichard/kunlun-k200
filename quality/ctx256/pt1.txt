@@ -1,0 +1,2 @@
+QUALITY reference=0 positions=8160 nmse=0.0616515959693 mean_KL=0.0712014595863 max_KL=4.33085883114 max_abs=21.591255188 greedy_equal=7228
+CORPUS input_tokens=8192 scored=8160 context=256 mean_nll=2.48833280206 perplexity=12.0411843389

@@ -9,6 +9,7 @@
 !PORTING.md
 !LLAMA-BUILD-NOTES.md
 !INT4-FEASIBILITY.md
+!QUALITY-RESULTS.md
 !build.sh
 !check-no-hw.sh
 !env.sh

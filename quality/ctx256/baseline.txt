@@ -1,0 +1,1 @@
+CORPUS input_tokens=8192 scored=8160 context=256 mean_nll=2.42380531312 perplexity=11.2887348565
