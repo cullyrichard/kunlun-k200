@@ -1,0 +1,28 @@
+# Allowlist: nothing is tracked unless named here. The vendor SDK, the model
+# weights, build trees and downloaded corpora all stay local -- sdk/ in
+# particular holds Kunlunxin's EULA'd userspace and 136 MB of prebuilt .ko
+# blobs that must not end up in this repo.
+/*
+!.gitignore
+!README.md
+!LICENSES.md
+!PORTING.md
+!LLAMA-BUILD-NOTES.md
+!INT4-FEASIBILITY.md
+!build.sh
+!check-no-hw.sh
+!env.sh
+!byte-map.csv
+!driver/
+!patches/
+!quality/
+!dual-die/
+
+# Within those, keep build output and bulk data out.
+quality/data/
+quality/smoke/
+dual-die/dual-die-bench
+**/*.bin
+**/*.err
+**/*.o
+**/*.ko
