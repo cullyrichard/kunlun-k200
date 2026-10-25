@@ -1,0 +1,1906 @@
+make[1]: Entering directory '/tmp/claude-1000/-home-cully/d88b53d0-a23d-4c76-a1bb-b399d747401a/scratchpad/khdr/usr/lib/modules/7.1.13-2-MANJARO/build'
+make[2]: Entering directory '/tmp/claude-1000/-home-cully/d88b53d0-a23d-4c76-a1bb-b399d747401a/scratchpad/verify/xre-ubuntu_2004_x86_64/kunlun-module-dkms-4.33.0/kunlun_module'
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: gcc (GCC) 16.2.1 20260810
+  You are using:           cc (GCC) 16.2.1 20260810
+ CONFTEST: hash__remap_4k_pfn
+ CONFTEST: set_pages_uc
+ CONFTEST: list_is_first
+ CONFTEST: set_memory_uc
+ CONFTEST: set_memory_array_uc
+ CONFTEST: set_pages_array_uc
+ CONFTEST: acquire_console_sem
+ CONFTEST: console_lock
+ CONFTEST: ioremap_cache
+ CONFTEST: ioremap_wc
+ CONFTEST: acpi_walk_namespace
+ CONFTEST: sg_alloc_table
+ CONFTEST: pci_get_domain_bus_and_slot
+ CONFTEST: get_num_physpages
+ CONFTEST: efi_enabled
+ CONFTEST: pde_data
+ CONFTEST: PDE_DATA
+ CONFTEST: proc_remove
+ CONFTEST: pm_vt_switch_required
+ CONFTEST: xen_ioemu_inject_msi
+ CONFTEST: phys_to_dma
+ CONFTEST: get_dma_ops
+ CONFTEST: dma_attr_macros
+ CONFTEST: dma_map_page_attrs
+ CONFTEST: write_cr4
+ CONFTEST: of_get_property
+ CONFTEST: of_find_node_by_phandle
+ CONFTEST: of_node_to_nid
+ CONFTEST: pnv_pci_get_npu_dev
+ CONFTEST: of_get_ibm_chip_id
+ CONFTEST: node_end_pfn
+ CONFTEST: pci_bus_address
+ CONFTEST: pci_stop_and_remove_bus_device
+ CONFTEST: pci_remove_bus_device
+ CONFTEST: register_cpu_notifier
+ CONFTEST: cpuhp_setup_state
+ CONFTEST: dma_map_resource
+ CONFTEST: backlight_device_register
+ CONFTEST: get_backlight_device_by_name
+ CONFTEST: timer_setup
+ CONFTEST: pci_enable_msix_range
+ CONFTEST: kernel_read_has_pointer_pos_arg
+ CONFTEST: kernel_write
+ CONFTEST: kthread_create_on_node
+ CONFTEST: of_find_matching_node
+ CONFTEST: dev_is_pci
+ CONFTEST: dma_direct_map_resource
+ CONFTEST: tegra_get_platform
+ CONFTEST: tegra_bpmp_send_receive
+ CONFTEST: flush_cache_all
+ CONFTEST: vmf_insert_pfn
+ CONFTEST: jiffies_to_timespec
+ CONFTEST: ktime_get_raw_ts64
+ CONFTEST: ktime_get_real_ts64
+ CONFTEST: full_name_hash
+ CONFTEST: hlist_for_each_entry
+ CONFTEST: pci_enable_atomic_ops_to_root
+ CONFTEST: vga_tryget
+ CONFTEST: pgprot_decrypted
+ CONFTEST: iterate_fd
+ CONFTEST: seq_read_iter
+ CONFTEST: sg_page_iter_page
+ CONFTEST: unsafe_follow_pfn
+ CONFTEST: drm_gem_object_get
+ CONFTEST: drm_gem_object_put_unlocked
+ CONFTEST: set_close_on_exec
+ CONFTEST: add_memory_driver_managed
+ CONFTEST: device_property_read_u64
+ CONFTEST: devm_of_platform_populate
+ CONFTEST: of_dma_configure
+ CONFTEST: of_property_count_elems_of_size
+ CONFTEST: of_property_read_variable_u8_array
+ CONFTEST: i2c_new_client_device
+ CONFTEST: i2c_unregister_device
+ CONFTEST: of_get_named_gpio
+ CONFTEST: devm_gpio_request_one
+ CONFTEST: gpio_direction_input
+ CONFTEST: gpio_direction_output
+ CONFTEST: gpio_get_value
+ CONFTEST: gpio_set_value
+ CONFTEST: gpio_to_irq
+ CONFTEST: icc_get
+ CONFTEST: icc_put
+ CONFTEST: icc_set_bw
+ CONFTEST: iommu_get_domain_for_dev
+ CONFTEST: class_dev_uevent_has_const_dev_args
+ CONFTEST: is_export_symbol_gpl_of_node_to_nid
+ CONFTEST: is_export_symbol_gpl_sme_active
+ CONFTEST: is_export_symbol_present_swiotlb_map_sg_attrs
+ CONFTEST: is_export_symbol_present_swiotlb_dma_ops
+ CONFTEST: is_export_symbol_present___close_fd
+ CONFTEST: is_export_symbol_present_close_fd
+ CONFTEST: is_export_symbol_present_get_unused_fd
+ CONFTEST: is_export_symbol_present_get_unused_fd_flags
+ CONFTEST: is_export_symbol_present_nvhost_get_default_device
+ CONFTEST: is_export_symbol_present_nvhost_syncpt_unit_interface_get_byte_offset
+ CONFTEST: is_export_symbol_present_nvhost_syncpt_unit_interface_get_aperture
+ CONFTEST: is_export_symbol_present_tegra_dce_register_ipc_client
+ CONFTEST: is_export_symbol_present_tegra_dce_unregister_ipc_client
+ CONFTEST: is_export_symbol_present_tegra_dce_client_ipc_send_recv
+ CONFTEST: is_export_symbol_present_dram_clk_to_mc_clk
+ CONFTEST: is_export_symbol_present_get_dram_num_channels
+ CONFTEST: is_export_symbol_present_tegra_dram_types
+ CONFTEST: acpi_op_remove
+ CONFTEST: file_operations
+ CONFTEST: file_inode
+ CONFTEST: kuid_t
+ CONFTEST: dma_ops
+ CONFTEST: swiotlb_dma_ops
+ CONFTEST: noncoherent_swiotlb_dma_ops
+ CONFTEST: vm_fault_has_address
+ CONFTEST: backlight_properties_type
+ CONFTEST: vm_insert_pfn_prot
+ CONFTEST: vmf_insert_pfn_prot
+ CONFTEST: address_space_init_once
+ CONFTEST: vm_ops_fault_removed_vma_arg
+ CONFTEST: vmbus_channel_has_ringbuffer_page
+ CONFTEST: device_driver_of_match_table
+ CONFTEST: device_of_node
+ CONFTEST: node_states_n_memory
+ CONFTEST: kmem_cache_has_kobj_remove_work
+ CONFTEST: sysfs_slab_unlink
+ CONFTEST: proc_ops
+ CONFTEST: timespec64
+ CONFTEST: vmalloc_has_pgprot_t_arg
+ CONFTEST: acpi_fadt_low_power_s0
+ CONFTEST: mm_has_mmap_lock
+ CONFTEST: pci_channel_state
+ CONFTEST: pci_dev_has_ats_enabled
+ CONFTEST: mt_device_gre
+ CONFTEST: remove_memory_has_nid_arg
+ CONFTEST: iommu_map_has_gfp_arg
+ CONFTEST: vm_area_struct_has_const_vm_flags
+ CONFTEST: dma_map_ops_has_map_resource
+ CONFTEST: follow_pfnmap_start
+ CONFTEST: num_registered_fb
+ CONFTEST: class_create_has_owner_arg
+ CONFTEST: dom0_kernel_present
+ CONFTEST: nvidia_vgpu_kvm_build
+ CONFTEST: nvidia_grid_build
+ CONFTEST: nvidia_grid_csp_build
+ CONFTEST: get_user_pages
+ CONFTEST: get_user_pages_remote
+ CONFTEST: pm_runtime_available
+ CONFTEST: vm_fault_t
+ CONFTEST: pci_class_multimedia_hd_audio
+ CONFTEST: drm_available
+ CONFTEST: ib_peer_memory_symbols
+  CC [M]  kunlun/kl_compat.o
+  CC [M]  kunlun/kl_cxpu.o
+  CC [M]  kunlun/kl_fops.o
+  CC [M]  kunlun/kl_hcm.o
+  CC [M]  kunlun/kl_main.o
+  CC [M]  kunlun/kl_mm.o
+  CC [M]  kunlun/kl_proc.o
+  CC [M]  kunlun/kl_war.o
+In file included from kunlun/kl_compat.h:177,
+                 from kunlun/kl_drv.h:34,
+                 from kunlun/kl_main.c:24:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl_main.c: At top level:
+kunlun/kl_main.c:217:5: warning: no previous prototype for ‘kl_dev_uevent’ [-Wmissing-prototypes]
+  217 | int kl_dev_uevent(const struct device *dev, struct kobj_uevent_env *env)
+      |     ^~~~~~~~~~~~~
+kunlun/kl_main.c:462:5: warning: no previous prototype for ‘kl_pci_sriov_configure’ [-Wmissing-prototypes]
+  462 | int kl_pci_sriov_configure(struct pci_dev *pdev, int num_vfs)
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+In file included from kunlun/kl_compat.h:177,
+                 from kunlun/kl_drv.h:34,
+                 from kunlun/kl_fops.c:24:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/kl_compat.h:177,
+                 from kunlun/kl_drv.h:34,
+                 from kunlun/kl_hcm.c:30:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/ctrldev/kl_ctrl.o
+  CC [M]  kunlun/kl1/control_node.o
+In file included from kunlun/kl_compat.h:177,
+                 from kunlun/kl_drv.h:34,
+                 from kunlun/kl_proc.c:31:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/kl_compat.h:177,
+                 from kunlun/kl_drv.h:34,
+                 from kunlun/kl_mm.c:25:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl_mm.c: At top level:
+kunlun/kl_mm.c:560:5: warning: no previous prototype for ‘kl_mm_get_pg_used’ [-Wmissing-prototypes]
+  560 | u64 kl_mm_get_pg_used(struct kl_mm *mm, int kind)
+      |     ^~~~~~~~~~~~~~~~~
+  CC [M]  kunlun/kl1/device.o
+In file included from kunlun/kl_compat.h:177,
+                 from kunlun/kl_compat.c:24:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl1/device_state.o
+  CC [M]  kunlun/kl1/exception.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from kunlun/kl_war.c:25:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl_war.c: At top level:
+kunlun/kl_war.c:103:5: warning: no previous prototype for ‘_kl_is_hygon_x86’ [-Wmissing-prototypes]
+  103 | int _kl_is_hygon_x86(void)
+      |     ^~~~~~~~~~~~~~~~
+kunlun/kl_war.c:168:5: warning: no previous prototype for ‘kl_add_tiny_mem_read_after_d2h_war’ [-Wmissing-prototypes]
+  168 | int kl_add_tiny_mem_read_after_d2h_war(void)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC [M]  kunlun/kl1/xpu_dma.o
+  CC [M]  kunlun/kl1/xpu_drv.o
+  CC [M]  kunlun/kl1/xpu_fops.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from kunlun/ctrldev/kl_ctrl.c:29:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/ctrldev/kl_ctrl.c: At top level:
+kunlun/ctrldev/kl_ctrl.c:55:5: warning: no previous prototype for ‘ioctl_version’ [-Wmissing-prototypes]
+   55 | int ioctl_version(void __user *argp)
+      |     ^~~~~~~~~~~~~
+kunlun/ctrldev/kl_ctrl.c:113:5: warning: no previous prototype for ‘ioctl_ioc_version’ [-Wmissing-prototypes]
+  113 | int ioctl_ioc_version(void __user *argp)
+      |     ^~~~~~~~~~~~~~~~~
+kunlun/ctrldev/kl_ctrl.c:400:5: warning: no previous prototype for ‘ctrldev_create’ [-Wmissing-prototypes]
+  400 | int ctrldev_create(unsigned int major, unsigned int minor)
+      |     ^~~~~~~~~~~~~~
+kunlun/ctrldev/kl_ctrl.c:436:6: warning: no previous prototype for ‘ctrldev_destroy’ [-Wmissing-prototypes]
+  436 | void ctrldev_destroy(void)
+      |      ^~~~~~~~~~~~~~~
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/control_node.c:26:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/device.c:24:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl1/xpu_hbm.o
+  CC [M]  kunlun/kl1/xpu_hw.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/exception.c:26:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl1/xpu_intc.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/device_state.c:26:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_dma.c:28:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl1/xpu_ioctl.o
+  CC [M]  kunlun/kl1/xpu_irq.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_drv.c:46:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl1/xpu_drv.c: At top level:
+kunlun/kl1/xpu_drv.c:411:5: warning: no previous prototype for ‘kl1_probe’ [-Wmissing-prototypes]
+  411 | int kl1_probe(struct kl_device *kdev)
+      |     ^~~~~~~~~
+kunlun/kl1/xpu_drv.c:619:5: warning: no previous prototype for ‘kl1_remove’ [-Wmissing-prototypes]
+  619 | int kl1_remove(struct kl_device *kdev)
+      |     ^~~~~~~~~~
+kunlun/kl1/xpu_drv.c:667:12: warning: no previous prototype for ‘kl1_module_init’ [-Wmissing-prototypes]
+  667 | int __init kl1_module_init(void)
+      |            ^~~~~~~~~~~~~~~
+  CC [M]  kunlun/kl1/xpu_mem.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_fops.c:36:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl1/xpu_fops.c: At top level:
+kunlun/kl1/xpu_fops.c:49:5: warning: no previous prototype for ‘xpu_char_open’ [-Wmissing-prototypes]
+   49 | int xpu_char_open(struct inode *inode, struct file *file)
+      |     ^~~~~~~~~~~~~
+kunlun/kl1/xpu_fops.c:67:5: warning: no previous prototype for ‘xpu_char_release’ [-Wmissing-prototypes]
+   67 | int xpu_char_release(struct inode *inode, struct file *file)
+      |     ^~~~~~~~~~~~~~~~
+kunlun/kl1/xpu_fops.c:114:6: warning: no previous prototype for ‘xpu_char_ioctl’ [-Wmissing-prototypes]
+  114 | long xpu_char_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
+      |      ^~~~~~~~~~~~~~
+kunlun/kl1/xpu_fops.c:247:5: warning: no previous prototype for ‘xpu_char_mmap’ [-Wmissing-prototypes]
+  247 | int xpu_char_mmap(struct file *file, struct vm_area_struct *vma)
+      |     ^~~~~~~~~~~~~
+  CC [M]  kunlun/kl1/xpu_monitor.o
+  CC [M]  kunlun/kl1/xpu_pd.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_hw.c:34:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl1/xpu_hw.c: At top level:
+kunlun/kl1/xpu_hw.c:162:5: warning: no previous prototype for ‘xpuhw_iatu_set_inbound_regions’ [-Wmissing-prototypes]
+  162 | int xpuhw_iatu_set_inbound_regions(struct xpu_device *xdev, const struct iatu_region_info *info)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kunlun/kl1/xpu_hw.c:263:5: warning: no previous prototype for ‘xpuhw_iatu_get_inbound_regions’ [-Wmissing-prototypes]
+  263 | int xpuhw_iatu_get_inbound_regions(struct xpu_device *xdev)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_hw.h:34,
+                 from kunlun/kl1/xpu_hbm.c:28:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_irq.c:40:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl1/xpu_irq.c: At top level:
+kunlun/kl1/xpu_irq.c:318:6: warning: no previous prototype for ‘isr_handle_sse_exception’ [-Wmissing-prototypes]
+  318 | void isr_handle_sse_exception(struct xpu_device *xdev, u64 st10, u64 *clr10, u64 *msk10)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+kunlun/kl1/xpu_irq.c:493:13: warning: no previous prototype for ‘xpu_interrupt’ [-Wmissing-prototypes]
+  493 | irqreturn_t xpu_interrupt(int irq, void *instance)
+      |             ^~~~~~~~~~~~~
+  CC [M]  kunlun/kl1/xpu_proc.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_monitor.c:28:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_pd.c:29:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl1/xpu_pd.c: At top level:
+kunlun/kl1/xpu_pd.c:190:6: warning: no previous prototype for ‘xpd_clean_etasks_locked’ [-Wmissing-prototypes]
+  190 | void xpd_clean_etasks_locked(struct xpu_pd *xpd)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_hw.h:34,
+                 from kunlun/kl1/xpu_intc.c:32:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl1/xpu_sched.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_ioctl.c:44:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl1/xpu_session.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_mem.c:34:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl1/xpu_mem.c: At top level:
+kunlun/kl1/xpu_mem.c:235:5: warning: no previous prototype for ‘__malloc_locked’ [-Wmissing-prototypes]
+  235 | u64 __malloc_locked(struct xpu_session *xsess, struct xpu_mem_data *mem, u64 sz)
+      |     ^~~~~~~~~~~~~~~
+kunlun/kl1/xpu_mem.c:321:5: warning: no previous prototype for ‘__free_locked’ [-Wmissing-prototypes]
+  321 | u64 __free_locked(struct xpu_session *xsess, struct xpu_mem_data *mem, u64 addr)
+      |     ^~~~~~~~~~~~~
+kunlun/kl1/xpu_mem.c:390:6: warning: no previous prototype for ‘__release_mem_data_by_owner’ [-Wmissing-prototypes]
+  390 | void __release_mem_data_by_owner(struct xpu_mem_data *mem, struct xpu_session *xsess)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC [M]  kunlun/kl1/xpu_sse.o
+  CC [M]  kunlun/kl1/xpu_tq.o
+  CC [M]  kunlun/kl2/control_node.o
+  CC [M]  kunlun/kl2/device_state.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_proc.c:40:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/dma.o
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_session.c:39:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/control_node.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_sse.c:38:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+  CC [M]  kunlun/kl2/dbgm.o
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_sched.c:33:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl1/xpu_sched.c: At top level:
+kunlun/kl1/xpu_sched.c:39:6: warning: no previous prototype for ‘xpu_tasklet_sched_tq’ [-Wmissing-prototypes]
+   39 | void xpu_tasklet_sched_tq(unsigned long data)
+      |      ^~~~~~~~~~~~~~~~~~~~
+kunlun/kl1/xpu_sched.c:46:6: warning: no previous prototype for ‘xpu_tasklet_sched_dev’ [-Wmissing-prototypes]
+   46 | void xpu_tasklet_sched_dev(unsigned long data)
+      |      ^~~~~~~~~~~~~~~~~~~~~
+kunlun/kl1/xpu_sched.c:54:6: warning: no previous prototype for ‘xpu_sched_session’ [-Wmissing-prototypes]
+   54 | void xpu_sched_session(struct xpu_session *xsess)
+      |      ^~~~~~~~~~~~~~~~~
+kunlun/kl1/xpu_sched.c:58:6: warning: no previous prototype for ‘xpu_sched_tq_init’ [-Wmissing-prototypes]
+   58 | void xpu_sched_tq_init(struct xpu_tq *xtq)
+      |      ^~~~~~~~~~~~~~~~~
+kunlun/kl1/xpu_sched.c:62:6: warning: no previous prototype for ‘xpu_sched_dev_init’ [-Wmissing-prototypes]
+   62 | void xpu_sched_dev_init(struct xpu_device *xdev)
+      |      ^~~~~~~~~~~~~~~~~~
+In file included from kunlun/kl1/../kl_compat.h:177,
+                 from kunlun/kl1/../kl_drv.h:34,
+                 from kunlun/kl1/xpu_drv.h:66,
+                 from kunlun/kl1/xpu_tq.c:40:
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/kl1/../port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/kl1/../port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/kl1/../port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/kl1/../port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/kl1/../port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/kl1/../port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/event.o
+  CC [M]  kunlun/kl2/exception.o
+  CC [M]  kunlun/kl2/fops.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/device_state.c:31:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/gddr_config.o
+  CC [M]  kunlun/kl2/hw.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/dma.c:25:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl2/dma.c: In function ‘kl2_pin_host_memory’:
+kunlun/kl2/dma.c:1105:29: warning: unused variable ‘i’ [-Wunused-variable]
+ 1105 |     int                ret, i;
+      |                             ^
+kunlun/kl2/dma.c: In function ‘kl2_unpin_host_memory’:
+kunlun/kl2/dma.c:1169:24: warning: unused variable ‘i’ [-Wunused-variable]
+ 1169 |     int                i;
+      |                        ^
+  CC [M]  kunlun/kl2/hwq.o
+  CC [M]  kunlun/kl2/img_proc.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/event.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from ././kunlun/kl2/exception.h:27,
+                 from kunlun/kl2/exception.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/fops.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl2/fops.c: At top level:
+kunlun/kl2/fops.c:38:5: warning: no previous prototype for ‘kl2_open’ [-Wmissing-prototypes]
+   38 | int kl2_open(struct inode *inode, struct file *file)
+      |     ^~~~~~~~
+kunlun/kl2/fops.c:58:5: warning: no previous prototype for ‘kl2_release’ [-Wmissing-prototypes]
+   58 | int kl2_release(struct inode *inode, struct file *file)
+      |     ^~~~~~~~~~~
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from ././kunlun/kl2/hw.h:27,
+                 from kunlun/kl2/hw.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/dbgm.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/intc.o
+  CC [M]  kunlun/kl2/ioctl.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/hwq.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/irq.o
+  CC [M]  kunlun/kl2/kl2_regs.o
+  CC [M]  kunlun/kl2/main.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/img_proc.c:47:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/mbox.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/ioctl.c:33:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/p2p.o
+kunlun/kl2/ioctl.c: At top level:
+kunlun/kl2/ioctl.c:266:5: warning: no previous prototype for ‘kl2_ioctl_memcpy_h2d’ [-Wmissing-prototypes]
+  266 | int kl2_ioctl_memcpy_h2d(struct kl2_session *sess, void __user *argp)
+      |     ^~~~~~~~~~~~~~~~~~~~
+kunlun/kl2/ioctl.c:315:5: warning: no previous prototype for ‘kl2_ioctl_memcpy_d2h’ [-Wmissing-prototypes]
+  315 | int kl2_ioctl_memcpy_d2h(struct kl2_session *sess, void __user *argp)
+      |     ^~~~~~~~~~~~~~~~~~~~
+kunlun/kl2/ioctl.c:361:5: warning: no previous prototype for ‘kl2_ioctl_memcpy_d2d’ [-Wmissing-prototypes]
+  361 | int kl2_ioctl_memcpy_d2d(struct kl2_session *sess, void __user *argp)
+      |     ^~~~~~~~~~~~~~~~~~~~
+kunlun/kl2/ioctl.c:392:5: warning: no previous prototype for ‘kl2_ioctl_memcpy_p2p’ [-Wmissing-prototypes]
+  392 | int kl2_ioctl_memcpy_p2p(struct kl2_device *kl2_dev, void __user *argp)
+      |     ^~~~~~~~~~~~~~~~~~~~
+kunlun/kl2/ioctl.c:790:5: warning: no previous prototype for ‘kl2_ioctl_launch’ [-Wmissing-prototypes]
+  790 | int kl2_ioctl_launch(struct kl2_session *sess, void __user *argp)
+      |     ^~~~~~~~~~~~~~~~
+kunlun/kl2/ioctl.c:980:5: warning: no previous prototype for ‘kl2_ioctl_wait’ [-Wmissing-prototypes]
+  980 | int kl2_ioctl_wait(struct kl2_session *sess, void __user *argp)
+      |     ^~~~~~~~~~~~~~
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/intc.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/proc.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/irq.c:26:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/ram_blk.o
+  CC [M]  kunlun/kl2/session.o
+  CC [M]  kunlun/kl2/spec.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/main.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl2/main.c: At top level:
+kunlun/kl2/main.c:80:5: warning: no previous prototype for ‘kl2_device_init’ [-Wmissing-prototypes]
+   80 | int kl2_device_init(struct kl2_device *kl2_dev)
+      |     ^~~~~~~~~~~~~~~
+kunlun/kl2/main.c:129:6: warning: no previous prototype for ‘kl2_device_destroy’ [-Wmissing-prototypes]
+  129 | void kl2_device_destroy(struct kl2_device *kl2_dev)
+      |      ^~~~~~~~~~~~~~~~~~
+kunlun/kl2/main.c:547:6: warning: no previous prototype for ‘kl2_misc_setup’ [-Wmissing-prototypes]
+  547 | void kl2_misc_setup(struct kl2_device *kl2_dev)
+      |      ^~~~~~~~~~~~~~
+kunlun/kl2/main.c:611:5: warning: no previous prototype for ‘kl2_probe’ [-Wmissing-prototypes]
+  611 | int kl2_probe(struct kl_device *kdev)
+      |     ^~~~~~~~~
+kunlun/kl2/main.c:751:5: warning: no previous prototype for ‘kl2_remove’ [-Wmissing-prototypes]
+  751 | int kl2_remove(struct kl_device *kdev)
+      |     ^~~~~~~~~~
+kunlun/kl2/main.c:997:12: warning: no previous prototype for ‘kl2_module_post’ [-Wmissing-prototypes]
+  997 | int __init kl2_module_post(void)
+      |            ^~~~~~~~~~~~~~~
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/mbox.h:24,
+                 from kunlun/kl2/mbox.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl2/mbox.c: At top level:
+kunlun/kl2/mbox.c:267:5: warning: no previous prototype for ‘kl2_sriov_mbox_response_xpu_busy_status_pf’ [-Wmissing-prototypes]
+  267 | int kl2_sriov_mbox_response_xpu_busy_status_pf(struct kl2_device *kl2_dev, int msg)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kunlun/kl2/mbox.c:288:5: warning: no previous prototype for ‘kl2_sriov_mbox_reset_cluster_pf’ [-Wmissing-prototypes]
+  288 | int kl2_sriov_mbox_reset_cluster_pf(struct kl2_device *kl2_dev, int msg)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kunlun/kl2/mbox.c:309:5: warning: no previous prototype for ‘kl2_sriov_mbox_reset_sdnn_pf’ [-Wmissing-prototypes]
+  309 | int kl2_sriov_mbox_reset_sdnn_pf(struct kl2_device *kl2_dev, int msg)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kunlun/kl2/mbox.c:330:5: warning: no previous prototype for ‘kl2_sriov_mbox_response_cluster_hwqid’ [-Wmissing-prototypes]
+  330 | int kl2_sriov_mbox_response_cluster_hwqid(struct kl2_device *kl2_dev, int msg)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kunlun/kl2/mbox.c:351:5: warning: no previous prototype for ‘kl2_sriov_mbox_response_sdnn_hwqid’ [-Wmissing-prototypes]
+  351 | int kl2_sriov_mbox_response_sdnn_hwqid(struct kl2_device *kl2_dev, int msg)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC [M]  kunlun/kl2/sse.o
+  CC [M]  kunlun/kl2/util.o
+In file included from kunlun/kl2/p2p.c:50:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/video.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/proc.c:25:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/session.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/video_cache.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/spec.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/video_dec.o
+  CC [M]  kunlun/kl2/video_enc.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/sse.c:24:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/kl2/video_perf.o
+  CC [M]  kunlun/port/nv.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/util.c:25:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/port/nv-caps.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/video.c:26:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/video_cache.c:46:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/port/nv-dma.o
+  CC [M]  kunlun/port/nv-kthread-q.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/video_enc.c:41:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/port/nv-procfs.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/video_perf.c:45:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/port/nv.c:26:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  CC [M]  kunlun/port/nv-procfs-utils.o
+  CC [M]  kunlun/port/os-interface.o
+In file included from ././kunlun/kl_compat.h:177,
+                 from ././kunlun/kl_drv.h:34,
+                 from ././kunlun/kl2/kl2.h:40,
+                 from kunlun/kl2/video_dec.c:43:
+././kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+././kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+././kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+././kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+././kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+././kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+././kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/kl2/video_dec.c: At top level:
+kunlun/kl2/video_dec.c:275:5: warning: no previous prototype for ‘get_dec_core’ [-Wmissing-prototypes]
+  275 | int get_dec_core(long core_id, vdecdev_t *pvdec_device, struct file *filp, unsigned long format)
+      |     ^~~~~~~~~~~~
+In file included from kunlun/port/nv-dma.c:27:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/port/nv-dma.c: At top level:
+kunlun/port/nv-dma.c:291:6: warning: no previous prototype for ‘nv_load_dma_map_scatterlist’ [-Wmissing-prototypes]
+  291 | void nv_load_dma_map_scatterlist(
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+kunlun/port/nv-dma.c:487:23: warning: no previous prototype for ‘nv_dma_unmap_sgt’ [-Wmissing-prototypes]
+  487 | NV_STATUS NV_API_CALL nv_dma_unmap_sgt(
+      |                       ^~~~~~~~~~~~~~~~
+kunlun/port/nv-kthread-q.c: In function ‘thread_create_on_node’:
+kunlun/port/nv-kthread-q.c:180:5: warning: ‘static’ is not at beginning of declaration [-Wold-style-declaration]
+  180 |     const static unsigned attempts = 3;
+      |     ^~~~~
+  CC [M]  kunlun/port/os-mlock.o
+  CC [M]  kunlun/port/os-pci.o
+  CC [M]  kunlun/port/os-registry.o
+In file included from kunlun/port/nv-procfs.c:27:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/port/nv-procfs.c: In function ‘nv_procfs_open_file’:
+kunlun/port/nv-linux.h:617:37: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  617 |             NV_MEMDBG_ADD(ptr, size); \
+      |                                     ^
+kunlun/port/nv-procfs.c:291:5: note: in expansion of macro ‘NV_KMALLOC’
+  291 |     NV_KMALLOC(nvpp, sizeof(nv_procfs_private_t));
+      |     ^~~~~~~~~~
+  CC [M]  kunlun/port/os-usermap.o
+  CC [M]  kunlun_peermem/kunlun_peermem.o
+In file included from kunlun/port/os-interface.c:27:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+kunlun/port/os-interface.c: At top level:
+kunlun/port/os-interface.c:291:7: warning: no previous prototype for ‘os_mem_copy_custom’ [-Wmissing-prototypes]
+  291 | void *os_mem_copy_custom(
+      |       ^~~~~~~~~~~~~~~~~~
+kunlun/port/os-interface.c: In function ‘os_alloc_mem’:
+kunlun/port/nv-linux.h:624:37: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  624 |             NV_MEMDBG_ADD(ptr, size); \
+      |                                     ^
+kunlun/port/os-interface.c:500:13: note: in expansion of macro ‘NV_KMALLOC_ATOMIC’
+  500 |             NV_KMALLOC_ATOMIC(*address, alloc_size);
+      |             ^~~~~~~~~~~~~~~~~
+kunlun/port/nv-linux.h:639:37: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  639 |             NV_MEMDBG_ADD(ptr, size); \
+      |                                     ^
+kunlun/port/os-interface.c:506:13: note: in expansion of macro ‘NV_KMALLOC_NO_OOM’
+  506 |             NV_KMALLOC_NO_OOM(*address, alloc_size);
+      |             ^~~~~~~~~~~~~~~~~
+kunlun/port/os-interface.c: In function ‘os_alloc_wait_queue’:
+kunlun/port/nv-linux.h:617:37: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  617 |             NV_MEMDBG_ADD(ptr, size); \
+      |                                     ^
+kunlun/port/os-interface.c:1894:5: note: in expansion of macro ‘NV_KMALLOC’
+ 1894 |     NV_KMALLOC(*wq, sizeof(os_wait_queue));
+      |     ^~~~~~~~~~
+In file included from kunlun/port/os-mlock.c:27:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/port/os-pci.c:27:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+In file included from kunlun/port/os-registry.c:27:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+  LD [M]  kunlun_peermem.o
+In file included from kunlun/port/os-usermap.c:27:
+kunlun/port/nv-linux.h: In function ‘nv_vmalloc’:
+kunlun/port/nv-linux.h:531:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  531 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap’:
+kunlun/port/nv-linux.h:545:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  545 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_cache’:
+kunlun/port/nv-linux.h:559:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  559 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_ioremap_wc’:
+kunlun/port/nv-linux.h:589:33: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  589 |         NV_MEMDBG_ADD(ptr, size);
+      |                                 ^
+kunlun/port/nv-linux.h: In function ‘nv_vmap’:
+kunlun/port/nv-linux.h:697:51: warning: suggest braces around empty body in an ‘if’ statement [-Wempty-body]
+  697 |         NV_MEMDBG_ADD(ptr, page_count * PAGE_SIZE);
+      |                                                   ^
+ld -r -o kunlun/kl-interface.o kunlun/kl_compat.o kunlun/kl_cxpu.o kunlun/kl_fops.o kunlun/kl_hcm.o kunlun/kl_main.o kunlun/kl_mm.o kunlun/kl_proc.o kunlun/kl_war.o kunlun/ctrldev/kl_ctrl.o kunlun/kl1/control_node.o kunlun/kl1/device.o kunlun/kl1/device_state.o kunlun/kl1/exception.o kunlun/kl1/xpu_dma.o kunlun/kl1/xpu_drv.o kunlun/kl1/xpu_fops.o kunlun/kl1/xpu_hbm.o kunlun/kl1/xpu_hw.o kunlun/kl1/xpu_intc.o kunlun/kl1/xpu_ioctl.o kunlun/kl1/xpu_irq.o kunlun/kl1/xpu_mem.o kunlun/kl1/xpu_monitor.o kunlun/kl1/xpu_pd.o kunlun/kl1/xpu_proc.o kunlun/kl1/xpu_sched.o kunlun/kl1/xpu_session.o kunlun/kl1/xpu_sse.o kunlun/kl1/xpu_tq.o kunlun/kl2/control_node.o kunlun/kl2/device_state.o kunlun/kl2/dma.o kunlun/kl2/dbgm.o kunlun/kl2/event.o kunlun/kl2/exception.o kunlun/kl2/fops.o kunlun/kl2/gddr_config.o kunlun/kl2/hw.o kunlun/kl2/hwq.o kunlun/kl2/img_proc.o kunlun/kl2/intc.o kunlun/kl2/ioctl.o kunlun/kl2/irq.o kunlun/kl2/kl2_regs.o kunlun/kl2/main.o kunlun/kl2/mbox.o kunlun/kl2/p2p.o kunlun/kl2/proc.o kunlun/kl2/ram_blk.o kunlun/kl2/session.o kunlun/kl2/spec.o kunlun/kl2/sse.o kunlun/kl2/util.o kunlun/kl2/video.o kunlun/kl2/video_cache.o kunlun/kl2/video_dec.o kunlun/kl2/video_enc.o kunlun/kl2/video_perf.o kunlun/port/nv.o kunlun/port/nv-caps.o kunlun/port/nv-dma.o kunlun/port/nv-kthread-q.o kunlun/port/nv-procfs.o kunlun/port/nv-procfs-utils.o kunlun/port/os-interface.o kunlun/port/os-mlock.o kunlun/port/os-pci.o kunlun/port/os-registry.o kunlun/port/os-usermap.o
+  LD [M]  kunlun.o
+  MODPOST Module.symvers
+  CC [M]  kunlun.mod.o
+  CC [M]  .module-common.o
+  CC [M]  kunlun_peermem.mod.o
+  LD [M]  kunlun_peermem.ko
+  LD [M]  kunlun.ko
+  BTF [M] kunlun_peermem.ko
+  BTF [M] kunlun.ko
+make[2]: Leaving directory '/tmp/claude-1000/-home-cully/d88b53d0-a23d-4c76-a1bb-b399d747401a/scratchpad/verify/xre-ubuntu_2004_x86_64/kunlun-module-dkms-4.33.0/kunlun_module'
+make[1]: Leaving directory '/tmp/claude-1000/-home-cully/d88b53d0-a23d-4c76-a1bb-b399d747401a/scratchpad/khdr/usr/lib/modules/7.1.13-2-MANJARO/build'

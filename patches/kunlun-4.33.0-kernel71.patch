@@ -1,0 +1,340 @@
+diff --color -urN a/kunlun_module/Kbuild b/kunlun_module/Kbuild
+--- a/kunlun_module/Kbuild	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/Kbuild	2026-10-24 18:33:30.638591751 -0400
+@@ -63,31 +63,32 @@
+ # Define CFLAGS that apply to all the KUNLUN kernel modules. EXTRA_CFLAGS
+ # is deprecated since 2.6.24 in favor of ccflags-y, but we need to support
+ # older kernels which do not have ccflags-y. Newer kernels append
+-# $(EXTRA_CFLAGS) to ccflags-y for compatibility.
++# $(ccflags-y) to ccflags-y for compatibility.
+ #
+ 
+-EXTRA_CFLAGS += -I$(src)/common/inc
+-EXTRA_CFLAGS += -I$(src)
+-EXTRA_CFLAGS += -I$(src)/../include
+-EXTRA_CFLAGS += -Wall -MD $(DEFINES) $(INCLUDES) -Wno-cast-qual -Wno-error -Wno-format-extra-args
+-EXTRA_CFLAGS += -D__KERNEL__ -DMODULE -DNVRM -DNV_VERSION_STRING=\"510.39.01\" -Wno-unused-function -Wuninitialized -fno-strict-aliasing -DNV_UVM_ENABLE
++ccflags-y += -I$(src)/common/inc
++ccflags-y += -I$(src)
++ccflags-y += -I$(src)/../include
++ccflags-y += -Wall -MD $(DEFINES) $(INCLUDES) -Wno-cast-qual -Wno-error -Wno-format-extra-args
++ccflags-y += -D__KERNEL__ -DMODULE -DNVRM -DNV_VERSION_STRING=\"510.39.01\" -Wno-unused-function -Wuninitialized -fno-strict-aliasing -DNV_UVM_ENABLE
+ # XXX(miaotianxiang): 可选编译选项，某些平台上可能不支持，故需cc-option测试
+-EXTRA_CFLAGS += $(call cc-option,-Werror=undef,)
++ccflags-y += $(call cc-option,-Werror=undef,)
+ # 开启unused variable检查
+ #EXTRA_CFLAGS += $(call cc-option,-Werror=unused-variable,)
+ # 关闭注释格式warning
+-EXTRA_CFLAGS += $(call cc-option,-Wno-comment,)
+-EXTRA_CFLAGS += $(call cc-option,-mno-red-zone,)
+-EXTRA_CFLAGS += $(call cc-option,-mcmodel=kernel,)
+-EXTRA_CFLAGS += -DNV_SPECTRE_V2=$(NV_SPECTRE_V2)
+-EXTRA_CFLAGS += -DNV_KERNEL_INTERFACE_LAYER
++ccflags-y += $(call cc-option,-Wno-comment,)
++ccflags-y += $(call cc-option,-mno-red-zone,)
++ccflags-y += $(call cc-option,-mcmodel=kernel,)
++ccflags-y += -DNV_SPECTRE_V2=$(NV_SPECTRE_V2)
++ccflags-y += -DNV_KERNEL_INTERFACE_LAYER
++ccflags-y += -DNV_LINUX
+ 
+ #
+ # Detect SGI UV systems and apply system-specific optimizations.
+ #
+ 
+ ifneq ($(wildcard /proc/sgi_uv),)
+- EXTRA_CFLAGS += -DNV_CONFIG_X86_UV
++ ccflags-y += -DNV_CONFIG_X86_UV
+ endif
+ 
+ 
+@@ -115,7 +116,7 @@
+ 
+ NV_CFLAGS_FROM_CONFTEST := $(shell $(NV_CONFTEST_CMD) build_cflags)
+ 
+-NV_CONFTEST_CFLAGS = $(NV_CFLAGS_FROM_CONFTEST) $(EXTRA_CFLAGS) -fno-pie
++NV_CONFTEST_CFLAGS = $(NV_CFLAGS_FROM_CONFTEST) $(ccflags-y) -fno-pie
+ 
+ NV_CONFTEST_COMPILE_TEST_HEADERS := $(obj)/conftest/macros.h
+ NV_CONFTEST_COMPILE_TEST_HEADERS += $(obj)/conftest/functions.h
+diff --color -urN a/kunlun_module/conftest.sh b/kunlun_module/conftest.sh
+--- a/kunlun_module/conftest.sh	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/conftest.sh	2026-10-24 18:44:14.295679634 -0400
+@@ -182,7 +182,7 @@
+ }
+ 
+ build_cflags() {
+-    BASE_CFLAGS="-O2 -D__KERNEL__ \
++    BASE_CFLAGS="-O2 -std=gnu11 -fms-extensions -fpermissive -D__KERNEL__ \
+ -DKBUILD_BASENAME=\"#conftest$$\" -DKBUILD_MODNAME=\"#conftest$$\" \
+ -nostdinc -isystem $ISYSTEM"
+ 
+@@ -5413,6 +5413,55 @@
+             fi
+         ;;
+ 
++        dma_map_ops_has_map_resource)
++            #
++            # Determine if the 'dma_map_ops' structure has a 'map_resource'
++            # member.
++            #
++            # The hook was dropped once the generic dma_map_resource() path
++            # covered every implementation.
++            #
++            CODE="
++            #include <linux/dma-map-ops.h>
++            int conftest_dma_map_ops_has_map_resource(void) {
++                return offsetof(struct dma_map_ops, map_resource);
++            }"
++
++            compile_check_conftest "$CODE" "NV_DMA_MAP_OPS_HAS_MAP_RESOURCE" "" "types"
++        ;;
++
++        follow_pfnmap_start)
++            #
++            # Determine if follow_pfnmap_start() is present.
++            #
++            # Commit 6da8e9634bb7 ("mm: new follow_pfnmap API") in v6.12
++            # replaced follow_pfn(), which was then removed.
++            #
++            CODE="
++            #include <linux/mm.h>
++            int conftest_follow_pfnmap_start(struct follow_pfnmap_args *args) {
++                return follow_pfnmap_start(args);
++            }"
++
++            compile_check_conftest "$CODE" "NV_FOLLOW_PFNMAP_START_PRESENT" "" "types"
++        ;;
++
++        num_registered_fb)
++            #
++            # Determine if the 'num_registered_fb' global is available.
++            #
++            # Commit 5b4c9cfc4bfb ("fbdev: Make registered_fb[] private to
++            # fbmem.c") in v6.1 made it, and registered_fb[], private.
++            #
++            CODE="
++            #include <linux/fb.h>
++            int conftest_num_registered_fb(void) {
++                return num_registered_fb;
++            }"
++
++            compile_check_conftest "$CODE" "NV_NUM_REGISTERED_FB_PRESENT" "" "types"
++        ;;
++
+         vm_area_struct_has_const_vm_flags)
+             #
+             # Determine if the 'vm_area_struct' structure has
+@@ -5423,9 +5472,10 @@
+             # functions") in v6.3.
+             #
+             CODE="
+-            #include <linux/mm_types.h>
+-            int conftest_vm_area_struct_has_const_vm_flags(void) {
+-                return offsetof(struct vm_area_struct, __vm_flags);
++            #include <linux/mm.h>
++            void conftest_vm_area_struct_has_const_vm_flags(
++                    struct vm_area_struct *vma) {
++                vm_flags_set(vma, 0);
+             }"
+ 
+             compile_check_conftest "$CODE" "NV_VM_AREA_STRUCT_HAS_CONST_VM_FLAGS" "" "types"
+diff --color -urN a/kunlun_module/kunlun/kl1/xpu_drv.h b/kunlun_module/kunlun/kl1/xpu_drv.h
+--- a/kunlun_module/kunlun/kl1/xpu_drv.h	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/kl1/xpu_drv.h	2026-10-24 18:40:53.569661940 -0400
+@@ -681,7 +681,7 @@
+                                   unsigned long interval, unsigned long data)
+ {
+     if (timer->function) {
+-        del_timer(timer);
++        timer_delete(timer);
+     }
+     //timer->data     = data;
+     //// interval should be ms, so interval/1000 is s
+diff --color -urN a/kunlun_module/kunlun/kl1/xpu_pd.c b/kunlun_module/kunlun/kl1/xpu_pd.c
+--- a/kunlun_module/kunlun/kl1/xpu_pd.c	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/kl1/xpu_pd.c	2026-10-24 18:40:53.572586502 -0400
+@@ -169,7 +169,7 @@
+ 
+ void xpd_del_ktimer(struct xpu_pd *xpd)
+ {
+-    del_timer(&xpd->ktimer);
++    timer_delete(&xpd->ktimer);
+ }
+ 
+ int xpd_busy_tq_count(struct xpu_pd *xpd)
+diff --color -urN a/kunlun_module/kunlun/kl2/dma.c b/kunlun_module/kunlun/kl2/dma.c
+--- a/kunlun_module/kunlun/kl2/dma.c	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/kl2/dma.c	2026-10-24 18:41:51.466283547 -0400
+@@ -1128,7 +1128,7 @@
+     minfo->mmaped     = false;
+     minfo->page_count = count_pages(addr, size);
+ 
+-    ret = os_lock_user_pages(addr, minfo->page_count, (void **)&minfo->user_pages, flags);
++    ret = os_lock_user_pages((void *)(uintptr_t)addr, minfo->page_count, (void **)&minfo->user_pages, flags);
+     if (ret != 0) {
+         goto err_get_user_pages;
+     }
+diff --color -urN a/kunlun_module/kunlun/kl2/main.c b/kunlun_module/kunlun/kl2/main.c
+--- a/kunlun_module/kunlun/kl2/main.c	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/kl2/main.c	2026-10-24 18:42:30.604671806 -0400
+@@ -109,12 +109,12 @@
+     }
+ 
+     kl2_dev->ur_ktime = ktime_set(0, 1 * 1000 * 1000); // 1ms
+-    hrtimer_init(&kl2_dev->ur_timer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
+-    kl2_dev->ur_timer.function = kl2_ur_update_stat_func;
++    hrtimer_setup(&kl2_dev->ur_timer, kl2_ur_update_stat_func, CLOCK_MONOTONIC,
++                  HRTIMER_MODE_REL);
+     kl2_dev->ur_timer_valid    = true;
+     kl2_dev->regular_ktime     = ktime_set(0, 500 * 1000 * 1000); // 500ms
+-    hrtimer_init(&kl2_dev->regular_timer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
+-    kl2_dev->regular_timer.function = kl2_regular_timer_func;
++    hrtimer_setup(&kl2_dev->regular_timer, kl2_regular_timer_func, CLOCK_MONOTONIC,
++                  HRTIMER_MODE_REL);
+     kl2_dev->regular_timer_valid    = true;
+     kl2_dev->regular_timer_toggle   = true;
+ 
+diff --color -urN a/kunlun_module/kunlun/kl2/video_perf.c b/kunlun_module/kunlun/kl2/video_perf.c
+--- a/kunlun_module/kunlun/kl2/video_perf.c	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/kl2/video_perf.c	2026-10-24 18:42:40.116219245 -0400
+@@ -310,8 +310,8 @@
+     atomic_set(&image_proc->video_perf->frames_num, 0);
+     atomic_set(&image_proc->video_perf->last_frames_num, 0);
+ 
+-    hrtimer_init(&kl2_dev->video_perf_hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
+-    kl2_dev->video_perf_hrtimer.function = do_video_perf;
++    hrtimer_setup(&kl2_dev->video_perf_hrtimer, do_video_perf, CLOCK_MONOTONIC,
++                  HRTIMER_MODE_REL);
+     hrtimer_start(&kl2_dev->video_perf_hrtimer, SAMPLING_INTERVAL, HRTIMER_MODE_REL);
+ 
+     return 0;
+diff --color -urN a/kunlun_module/kunlun/kl_compat.h b/kunlun_module/kunlun/kl_compat.h
+--- a/kunlun_module/kunlun/kl_compat.h	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/kl_compat.h	2026-10-24 18:42:30.587907434 -0400
+@@ -56,6 +56,7 @@
+ 
+ #include <uapi/linux/types.h>
+ #include <linux/compiler.h>
++#include <linux/version.h>
+ 
+ static __always_inline void compat_data_access_exceeds_word_size(void)
+ #ifdef __compiletime_warning
+@@ -156,6 +157,22 @@
+         __val;                                                                                     \
+     })
+ 
++// hrtimer_init() was removed in v6.15; hrtimer_setup() takes the callback too.
++#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 15, 0)
++#define hrtimer_setup(t, fn, clock, mode)                                                          \
++    do {                                                                                           \
++        hrtimer_init((t), (clock), (mode));                                                        \
++        (t)->function = (fn);                                                                      \
++    } while (0)
++#endif
++
++// del_timer()/del_timer_sync() were removed in v6.15; timer_delete() and
++// timer_delete_sync() have been the names since v6.2.
++#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 2, 0)
++#define timer_delete(t)      del_timer(t)
++#define timer_delete_sync(t) del_timer_sync(t)
++#endif
++
+ // 从NV驱动移植，以解决不同内核版本间的编译差异，后期完成NV字符串替换
+ #include "port/nv-linux.h"
+ #include "port/nv-procfs.h"
+diff --color -urN a/kunlun_module/kunlun/kunlun.Kbuild b/kunlun_module/kunlun/kunlun.Kbuild
+--- a/kunlun_module/kunlun/kunlun.Kbuild	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/kunlun.Kbuild	2026-10-24 18:44:14.306436978 -0400
+@@ -261,6 +261,9 @@
+ NV_CONFTEST_TYPE_COMPILE_TESTS += remove_memory_has_nid_arg
+ NV_CONFTEST_TYPE_COMPILE_TESTS += iommu_map_has_gfp_arg
+ NV_CONFTEST_TYPE_COMPILE_TESTS += vm_area_struct_has_const_vm_flags
++NV_CONFTEST_TYPE_COMPILE_TESTS += dma_map_ops_has_map_resource
++NV_CONFTEST_TYPE_COMPILE_TESTS += follow_pfnmap_start
++NV_CONFTEST_TYPE_COMPILE_TESTS += num_registered_fb
+ NV_CONFTEST_TYPE_COMPILE_TESTS += class_create_has_owner_arg
+ 
+ 
+diff --color -urN a/kunlun_module/kunlun/port/nv-dma.c b/kunlun_module/kunlun/port/nv-dma.c
+--- a/kunlun_module/kunlun/port/nv-dma.c	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/port/nv-dma.c	2026-10-24 18:44:32.172823198 -0400
+@@ -787,8 +787,14 @@
+ #endif
+     }
+ 
++#if defined(NV_DMA_MAP_OPS_HAS_MAP_RESOURCE)
+     return (ops->map_resource != NULL);
+ #else
++    /* The hook is gone: every dma_map_ops now goes through the
++     * generic dma_map_resource() path. */
++    return NV_TRUE;
++#endif
++#else
+     return NV_FALSE;
+ #endif
+ }
+diff --color -urN a/kunlun_module/kunlun/port/nv-time.h b/kunlun_module/kunlun/port/nv-time.h
+--- a/kunlun_module/kunlun/port/nv-time.h	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/port/nv-time.h	2026-10-24 18:39:31.646460888 -0400
+@@ -142,7 +142,7 @@
+     ktime_get_raw_ts64(&tm1);
+ #endif
+ 
+-    if (in_irq() && (us > NV_MAX_ISR_DELAY_US))
++    if (in_hardirq() && (us > NV_MAX_ISR_DELAY_US))
+         return NV_ERR_GENERIC;
+ 
+     mdelay_safe_msec = us / 1000;
+@@ -187,7 +187,7 @@
+     tm_start = tm_aux;
+ #endif
+ 
+-    if (in_irq() && (ms > NV_MAX_ISR_DELAY_MS))
++    if (in_hardirq() && (ms > NV_MAX_ISR_DELAY_MS))
+     {
+         return NV_ERR_GENERIC;
+     }
+diff --color -urN a/kunlun_module/kunlun/port/os-interface.c b/kunlun_module/kunlun/port/os-interface.c
+--- a/kunlun_module/kunlun/port/os-interface.c	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/port/os-interface.c	2026-10-24 18:44:32.194450318 -0400
+@@ -244,7 +244,7 @@
+ 
+ NvBool NV_API_CALL os_is_isr(void)
+ {
+-    return (in_irq());
++    return (in_hardirq());
+ }
+ 
+ // return TRUE if the caller is the super-user
+@@ -1118,7 +1118,7 @@
+     NvU64 consoleBar2Address
+ )
+ {
+-#if defined(CONFIG_FB)
++#if defined(CONFIG_FB) && defined(NV_NUM_REGISTERED_FB_PRESENT)
+     int i;
+     *pPhysicalAddress = 0;
+     *pFbWidth = *pFbHeight = *pFbDepth = *pFbPitch = 0;
+diff --color -urN a/kunlun_module/kunlun/port/os-mlock.c b/kunlun_module/kunlun/port/os-mlock.c
+--- a/kunlun_module/kunlun/port/os-mlock.c	2024-11-26 23:02:48.000000000 -0500
++++ b/kunlun_module/kunlun/port/os-mlock.c	2026-10-24 18:44:32.183564255 -0400
+@@ -30,7 +30,18 @@
+                                 unsigned long address,
+                                 unsigned long *pfn)
+ {
+-#if defined(NV_UNSAFE_FOLLOW_PFN_PRESENT)
++#if defined(NV_FOLLOW_PFNMAP_START_PRESENT)
++    struct follow_pfnmap_args args = { .vma = vma, .address = address };
++    int rc = follow_pfnmap_start(&args);
++
++    if (rc)
++        return rc;
++
++    *pfn = args.pfn;
++    follow_pfnmap_end(&args);
++
++    return 0;
++#elif defined(NV_UNSAFE_FOLLOW_PFN_PRESENT)
+     return unsafe_follow_pfn(vma, address, pfn);
+ #else
+     return follow_pfn(vma, address, pfn);

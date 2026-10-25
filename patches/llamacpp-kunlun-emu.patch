@@ -1,0 +1,214 @@
+diff --git a/ggml/src/ggml-cpu/ggml-cpu.c b/ggml/src/ggml-cpu/ggml-cpu.c
+index ab82e3d..145ae51 100644
+--- a/ggml/src/ggml-cpu/ggml-cpu.c
++++ b/ggml/src/ggml-cpu/ggml-cpu.c
+@@ -1252,6 +1252,196 @@ static void ggml_compute_forward_mul_mat_one_chunk(
+     }
+ }
+ 
++// K200 activation-quantization emulation, selected by KUNLUN_EMU.
++//
++// The device Q4_0 GEMV accumulates, per 32-wide K block,
++//   out += wscale[b] * dequant_scale * dot_int(w4, a8)
++// (kernels/native-q4/pipeline.h, mac_group + ew_group + rs_group). That is the
++// same form as ggml_vec_dot_q4_0_q8_0, so the device differs from this CPU
++// reference only in how src1 becomes int8. The modes are:
++//   pt2 - one scale for the whole src1 buffer, plus a residual pass. This is
++//         what both batch-1 GEMVs do: common Q4 (src/q4-common.inc:83,
++//         components=2) and native Q4 (src/k200.cpp:537), i.e. decode.
++//   pt1 - same single scale, residual pass dropped. Ablation, not a device mode.
++//   pr1 - one scale per src1 row, single pass, primary component only. This is
++//         what the common Q4 GEMM does for m != 1, i.e. prefill and any
++//         batched scoring run (kunlun-common-quant-row-fused, mode 1 "A8 row",
++//         last_components=1 in src/q4-common.inc:168).
++//   pb1 - one scale per 32-wide block, single pass (plain q8_0). The CPU
++//         reference's own granularity; a control, not a device mode.
++// Every device mode holds its scale in fp32 and applies it to the dot, as the
++// hardware does, instead of letting it round through block_q8_0's fp16 field.
++// Only activation quantization is modelled. Weights stay Q4_0 with per-32-block
++// scales, which is what the native and common Q4 paths keep on device; the
++// optional GGML_KUNLUN_REQUANT_I8 rowwise-INT8 weight path is not emulated.
++enum ggml_kunlun_emu {
++    GGML_KUNLUN_EMU_OFF = 0,
++    GGML_KUNLUN_EMU_PT1,
++    GGML_KUNLUN_EMU_PT2,
++    GGML_KUNLUN_EMU_PR1,
++    GGML_KUNLUN_EMU_PB1,
++};
++
++static int ggml_kunlun_emu_mode(void) {
++    static atomic_int cached = -1;
++
++    int mode = atomic_load_explicit(&cached, memory_order_relaxed);
++    if (mode >= 0) {
++        return mode;
++    }
++
++    const char * name = getenv("KUNLUN_EMU");
++
++    mode = GGML_KUNLUN_EMU_OFF;
++    if (name && strcmp(name, "off") != 0) {
++        if      (strcmp(name, "pt1") == 0) mode = GGML_KUNLUN_EMU_PT1;
++        else if (strcmp(name, "pt2") == 0) mode = GGML_KUNLUN_EMU_PT2;
++        else if (strcmp(name, "pr1") == 0) mode = GGML_KUNLUN_EMU_PR1;
++        else if (strcmp(name, "pb1") == 0) mode = GGML_KUNLUN_EMU_PB1;
++        else GGML_ABORT("KUNLUN_EMU must be off, pt1, pt2, pr1 or pb1");
++        GGML_LOG_INFO("%s: emulating K200 q4_0 activation quantization, mode %s\n", __func__, name);
++    }
++
++    atomic_store_explicit(&cached, mode, memory_order_relaxed);
++    return mode;
++}
++
++static bool ggml_kunlun_emu_eligible(const struct ggml_tensor * src0, const struct ggml_tensor * src1) {
++    return src0->type == GGML_TYPE_Q4_0 && src1->type == GGML_TYPE_F32
++        && src0->extra == NULL
++        && ggml_is_contiguous(src0) && ggml_is_contiguous(src1)
++        && src0->ne[2] == 1 && src0->ne[3] == 1
++        && src1->ne[2] == 1 && src1->ne[3] == 1
++        && src0->ne[0] % QK8_0 == 0;
++}
++
++// k200.cpp quantizes with 127/max and rounds away from zero; keep that exactly
++static inline int8_t ggml_kunlun_emu_round(float v) {
++    const int q = (int)(v + (v >= 0.0f ? 0.5f : -0.5f));
++    return (int8_t) MIN(127, MAX(-127, q));
++}
++
++static void ggml_kunlun_emu_quant_row(
++        const float      * GGML_RESTRICT x,
++              block_q8_0 * GGML_RESTRICT y,
++        int64_t k, int mode, int pass, float max0, float max1) {
++    if (mode == GGML_KUNLUN_EMU_PB1) {
++        quantize_row_q8_0(x, y, k);
++        return;
++    }
++
++    const float s0   = max0/127.0f;
++    const float inv0 = 127.0f/max0;
++    const float inv1 = 127.0f/max1;
++
++    for (int64_t b = 0; b < k/QK8_0; ++b) {
++        y[b].d = GGML_CPU_FP32_TO_FP16(1.0f);
++        for (int j = 0; j < QK8_0; ++j) {
++            const float v = x[b*QK8_0 + j];
++            if (pass == 0) {
++                y[b].qs[j] = ggml_kunlun_emu_round(v*inv0);
++            } else {
++                const float r = v - ggml_kunlun_emu_round(v*inv0)*s0;
++                y[b].qs[j] = ggml_kunlun_emu_round(r*inv1);
++            }
++        }
++    }
++}
++
++static void ggml_mul_mat_kunlun_emu(
++        const struct ggml_compute_params * params,
++              struct ggml_tensor * dst,
++              int mode) {
++    const struct ggml_tensor * src0 = dst->src[0];
++    const struct ggml_tensor * src1 = dst->src[1];
++
++    const int ith = params->ith;
++    const int nth = params->nth;
++
++    const int64_t k = src0->ne[0];
++    const int64_t n = src0->ne[1];
++    const int64_t m = src1->ne[1];
++
++    const float * x = (const float *) src1->data;
++
++    // the pt scales span the whole activation buffer, not one row, so every
++    // thread reduces over all of src1 rather than coordinating a partial max.
++    // pr1 needs one max per row, and every thread needs all of them to scale
++    // the dots it owns; reducing all m rows per thread costs O(k*m), which is
++    // nothing beside the n*m*k of the dots themselves.
++    float max0 = 0.0f;
++    float max1 = 0.0f;
++    float   rowmax_stack[64];
++    float * rowmax = NULL;
++    if (mode == GGML_KUNLUN_EMU_PR1) {
++        rowmax = m <= (int64_t) (sizeof(rowmax_stack)/sizeof(float)) ? rowmax_stack : malloc(m*sizeof(float));
++        GGML_ASSERT(rowmax);
++        for (int64_t i11 = 0; i11 < m; ++i11) {
++            float r = 0.0f;
++            for (int64_t j = 0; j < k; ++j) {
++                r = MAX(r, fabsf(x[i11*k + j]));
++            }
++            rowmax[i11] = r == 0.0f ? 1.0f : r;
++        }
++    } else if (mode != GGML_KUNLUN_EMU_PB1) {
++        for (int64_t j = 0; j < k*m; ++j) {
++            max0 = MAX(max0, fabsf(x[j]));
++        }
++        if (max0 == 0.0f) {
++            max0 = 1.0f;
++        }
++        if (mode == GGML_KUNLUN_EMU_PT2) {
++            const float s0   = max0/127.0f;
++            const float inv0 = 127.0f/max0;
++            for (int64_t j = 0; j < k*m; ++j) {
++                max1 = MAX(max1, fabsf(x[j] - ggml_kunlun_emu_round(x[j]*inv0)*s0));
++            }
++        }
++        if (max1 == 0.0f) {
++            max1 = 1.0f;
++        }
++    }
++
++    char * wdata = params->wdata;
++    const size_t row_size = ggml_row_size(GGML_TYPE_Q8_0, k);
++    GGML_ASSERT(params->wsize >= row_size*m);
++
++    ggml_vec_dot_t const vec_dot = type_traits_cpu[GGML_TYPE_Q4_0].vec_dot;
++
++    const int passes = mode == GGML_KUNLUN_EMU_PT2 ? 2 : 1;
++    for (int pass = 0; pass < passes; ++pass) {
++        const float scale = mode == GGML_KUNLUN_EMU_PB1 ? 1.0f
++                          : pass == 0 ? max0/127.0f : max1/127.0f;
++
++        for (int64_t i11 = ith; i11 < m; i11 += nth) {
++            ggml_kunlun_emu_quant_row(x + i11*k, (block_q8_0 *)(wdata + i11*row_size), k, mode, pass,
++                                      rowmax ? rowmax[i11] : max0, max1);
++        }
++
++        ggml_barrier(params->threadpool);
++
++        for (int64_t i01 = ith; i01 < n; i01 += nth) {
++            const char * w = (const char *) src0->data + i01*src0->nb[1];
++            for (int64_t i11 = 0; i11 < m; ++i11) {
++                float s;
++                vec_dot(k, &s, 0, w, 0, wdata + i11*row_size, 0, 1);
++                const float scale_i = rowmax ? rowmax[i11]/127.0f : scale;
++                float * d = (float *)((char *) dst->data + i11*dst->nb[1]) + i01;
++                *d = pass == 0 ? scale_i*s : *d + scale_i*s;
++            }
++        }
++
++        // wdata is reused by the next pass
++        if (pass + 1 < passes) {
++            ggml_barrier(params->threadpool);
++        }
++    }
++
++    if (rowmax && rowmax != rowmax_stack) {
++        free(rowmax);
++    }
++}
++
+ void ggml_compute_forward_mul_mat(
+         const struct ggml_compute_params * params,
+               struct ggml_tensor * dst) {
+@@ -1265,6 +1455,12 @@ void ggml_compute_forward_mul_mat(
+         return;
+     }
+ 
++    const int kunlun_emu = ggml_kunlun_emu_mode();
++    if (kunlun_emu != GGML_KUNLUN_EMU_OFF && ggml_kunlun_emu_eligible(src0, src1)) {
++        ggml_mul_mat_kunlun_emu(params, dst, kunlun_emu);
++        return;
++    }
++
+     // If tiled is supported, it will execute the full op here and we return
+     if (ggml_compute_forward_mul_mat_tiled(params, dst)) {
+         return;
