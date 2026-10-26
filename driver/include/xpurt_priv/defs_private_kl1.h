@@ -1,23 +1,18 @@
-#ifndef BAIDU_XPU_RUNTIME_INCLUDE_XPU_DEFS_PRIVATE_KL1_H
-#define BAIDU_XPU_RUNTIME_INCLUDE_XPU_DEFS_PRIVATE_KL1_H
+/*
+ * xpurt_priv/defs_private_kl1.h -- interface declarations for the Kunlunxin KL driver.
+ *
+ * The ioctl numbers, constants and structure layouts here are ABI facts:
+ * they must match the vendor runtime bit for bit or the driver cannot talk
+ * to it. They were recovered from the compiled driver's own debug info and
+ * from the MIT-licensed driver sources' use of them -- not copied from the
+ * vendor's headers, which ship unlicensed under the XRE EULA and are
+ * deliberately not redistributed here. check-abi.sh proves the layouts
+ * match the vendor's; LICENSES.md explains why this file exists.
+ */
 
-#include "xpurt_priv/defs_private.h"
+#ifndef KL_XPURT_PRIV_DEFS_PRIVATE_KL1_H
+#define KL_XPURT_PRIV_DEFS_PRIVATE_KL1_H
 
-enum {
-    // iATU
-    KL1_INBOUND_REGION_NUM  = 4,
-    KL1_OUTBOUND_REGION_NUM = 4,
-    KL1_MAX_REGION_NUM      = 4, // max(KL1_INBOUND_REGION_NUM, KL1_OUTBOUND_REGION_NUM)
-};
+#include "kl_abi_types.h"
 
-struct iatu_region_info {
-    int      region_type;
-    int      region_en;
-    int      match_mode[KL1_MAX_REGION_NUM];
-    uint32_t bar[KL1_MAX_REGION_NUM];
-    uint64_t size[KL1_MAX_REGION_NUM];
-    uint64_t base[KL1_MAX_REGION_NUM];
-    uint64_t target[KL1_MAX_REGION_NUM];
-};
-
-#endif
+#endif /* KL_XPURT_PRIV_DEFS_PRIVATE_KL1_H */

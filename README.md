@@ -25,7 +25,9 @@ on CPU, ahead of the card: decode is free, prefill is not.
 
 ```
 driver/      Kunlunxin kunlun-module-dkms-4.33.0, imported pristine, then
-             ported to 7.1 on top -- see git history and LICENSES.md
+             ported to 7.1 on top -- see git history and LICENSES.md.
+             driver/include/ is the exception: re-declared, not imported,
+             and driver/check-abi.sh proves it is the same ABI
 patches/     the same port as a standalone patch against the vendor tarball,
              its build log, and the KUNLUN_EMU patch for the llama.cpp fork
 quality/     fixed-input quality harness: pinned WikiText-2 IDs and the sweep
@@ -55,7 +57,8 @@ make -j8 IGNORE_XEN_PRESENCE=1 IGNORE_PREEMPT_RT_PRESENCE=1 \
      IGNORE_CC_MISMATCH=1 KERNELDIR=/lib/modules/$(uname -r)/build modules
 ```
 
-Needs the matching kernel headers, and `pahole` for the BTF step. To apply the
+Needs the matching kernel headers (`linux71-headers` on Manjaro) and
+`pahole`, for the BTF step and for `check-abi.sh`. To apply the
 port to a fresh vendor tarball instead, `patch -p1 <
 patches/kunlun-4.33.0-kernel71.patch` from the `kunlun-module-dkms-4.33.0`
 directory. `PORTING.md` explains each of the 13 changes and why it was needed.

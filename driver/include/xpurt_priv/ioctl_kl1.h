@@ -1,10 +1,20 @@
-#ifndef BAIDU_XPU_RUNTIME_MODULE_XPU_DRIVER_IOCTL_KL1_H
-#define BAIDU_XPU_RUNTIME_MODULE_XPU_DRIVER_IOCTL_KL1_H
+/*
+ * xpurt_priv/ioctl_kl1.h -- interface declarations for the Kunlunxin KL driver.
+ *
+ * The ioctl numbers, constants and structure layouts here are ABI facts:
+ * they must match the vendor runtime bit for bit or the driver cannot talk
+ * to it. They were recovered from the compiled driver's own debug info and
+ * from the MIT-licensed driver sources' use of them -- not copied from the
+ * vendor's headers, which ship unlicensed under the XRE EULA and are
+ * deliberately not redistributed here. check-abi.sh proves the layouts
+ * match the vendor's; LICENSES.md explains why this file exists.
+ */
 
-#include "xpurt_priv/defs_private.h"
-#include "xpurt_priv/defs_private_kl1.h"
-#include "xpurt_priv/ioctl.h"
+#ifndef KL_XPURT_PRIV_IOCTL_KL1_H
+#define KL_XPURT_PRIV_IOCTL_KL1_H
 
-#define IOCTL_QUERY_IATU_REGION  _IOR(IOCTL_IOC_MAGIC, 61, struct iatu_region_info)
+#include "kl_abi_types.h"
 
-#endif
+#define IOCTL_QUERY_IATU_REGION	_IOR(IOCTL_IOC_MAGIC, 61, struct iatu_region_info)
+
+#endif /* KL_XPURT_PRIV_IOCTL_KL1_H */
