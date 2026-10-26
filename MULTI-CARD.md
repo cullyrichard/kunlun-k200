@@ -64,6 +64,22 @@ one split buffer type per card, not a global pair of ids 0 and 1.
 **Not yet surveyed:** the file end to end — only lines 1-100 and ~230-300 were
 read. Expect more `[2]`s.
 
+### Harness, `upstream/kunlunK200_lib/tools` and `env.sh`
+
+Found by building and dry-running the harnesses on 2026-10-26, not by reading
+the library. None of these touch the card, and all three bite the moment two
+cards are in the slot.
+
+| file:line | what |
+|---|---|
+| `kunlunK200_lib/tools/thermal-guard.py:25` | `len(rows)!=2` raises `temperature unavailable`, so with four dies reporting **every guarded test exits 91** before its command even starts — i.e. all of `verify.sh` and both bench stages. The count wants to come from the device count; the per-row 0-150 C check at :27 is the part worth keeping |
+| `kunlunK200_llama.cpp/examples/kunlun/verify.sh:17,22` | `for pd in 0 1` — the exactness and fast-split matrices cover two dies by construction, so on four they silently test half the hardware |
+| `env.sh:10` | puts only `$XRE/bin` on `PATH`, but `verify.sh:6` invokes the guard as a bare `k200-thermal-guard`, which installs to `$KUNLUN_PREFIX/bin`. As shipped, `verify.sh` dies at its first `run` on an otherwise correct tree |
+
+`check-hw.sh` prepends the prefix bin itself and warns when the die count is
+not 2, so bring-up is not blocked on any of this; the warning is there to keep
+a wall of exit 91s from reading as a hardware fault. The fixes belong upstream.
+
 ## Topology is discoverable
 
 `sdk/xpu-4.33.0/include/xpu/runtime.h`:
@@ -137,8 +153,10 @@ old test C's gather had, issuing a die-0 local copy with die 1 selected.
 ## Order of work
 
 1. ~~Bench extension (no hardware needed)~~ — done
-2. Cards arrive: power, `xpu_smi` shows 4 dies, run the bench. It will report
-   the two-device ceiling and measure dies 0-1 only
+2. Cards arrive: power, `xpu_smi` shows 4 dies, run `check-hw.sh`. The bench
+   will report the two-device ceiling and measure dies 0-1 only. Widen
+   `thermal-guard.py:25` first or every guarded stage exits 91 — it is a
+   one-line change and nothing else in the ladder runs without it
 3. Library `max_devices` widening + backend lines 96-98. The bench then
    measures all four with no further change
 4. Only if the peer matrix is favourable: N-way tensor split

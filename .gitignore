@@ -10,8 +10,10 @@
 !LLAMA-BUILD-NOTES.md
 !INT4-FEASIBILITY.md
 !QUALITY-RESULTS.md
+!MULTI-CARD.md
 !build.sh
 !check-no-hw.sh
+!check-hw.sh
 !env.sh
 !byte-map.csv
 !driver/
@@ -23,7 +25,18 @@
 quality/data/
 quality/smoke/
 dual-die/dual-die-bench
+dual-die/dual-die-bench-fake
 **/*.bin
 **/*.err
 **/*.o
 **/*.ko
+
+# Kbuild byproducts, from building the modules in place.
+**/.*.cmd
+**/*.mod
+**/*.mod.c
+**/.tmp_versions/
+driver/kunlun_module/Module.symvers
+driver/kunlun_module/modules.order
+driver/kunlun_module/conftest/
+driver/kunlun_module/kunlun/port/nv_compiler.h

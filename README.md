@@ -13,7 +13,7 @@ so everything here is verified as far as a machine without the card can go.
 | Vendor userspace (XRE 4.33.0.1) | runs unmodified; `xpu_smi` reports runtime and driver 4.33 |
 | KunlunK200 library 0.4.0 | 75/75 targets, all 32 `.xpu` kernels compile |
 | llama.cpp fork | 459/459 targets, backend registers, CPU inference end-to-end |
-| Everything behind `probe()` | untested — needs the card |
+| Everything behind `probe()` | untested — needs the card; `check-hw.sh` is the harness waiting for it |
 
 `PORTING.md` is the driver write-up, `LLAMA-BUILD-NOTES.md` the userspace and
 llama.cpp build, `INT4-FEASIBILITY.md` the analysis of where the performance
@@ -34,6 +34,12 @@ dual-die/    PD0+PD1 peer-copy, bandwidth and N-split GEMV benchmarks
 byte-map.csv weight-layout map for the native Q4 path
 build.sh     rebuild the library and the llama.cpp fork from a staged SDK
 env.sh       XRE/XDNN/XTDK paths and the LD_LIBRARY_PATH the vendor libs need
+check-no-hw.sh, check-hw.sh
+             the two harnesses: what is verifiable with no card (toolchain,
+             SDK handshake, CPU paths, the multi-die bench logic against a
+             fake runtime), and the bring-up ladder for when one is in the
+             slot (preflight, enumeration, library smoke, the fork's own
+             verification suite, the multi-die bench, on-device quality)
 ```
 
 `sdk/`, `upstream/`, `models/` and `build/` are deliberately untracked; see
@@ -62,7 +68,9 @@ The two forks this work builds against are not vendored here:
 - `github.com/UnagiDojyou/kunlunK200_lib` @ `d98643c` (v0.4.0)
 
 Clone them into `upstream/`, stage the SDK as `LLAMA-BUILD-NOTES.md` describes,
-then `./build.sh`. `check-no-hw.sh` re-verifies what is checkable without a card.
+then `./build.sh`. `check-no-hw.sh` re-verifies what is checkable without a card;
+`check-hw.sh` is what to run once one is present, and exits 1 with an
+explanation if none is.
 
 ## Licensing
 
